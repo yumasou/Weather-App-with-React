@@ -48,12 +48,12 @@ function App() {
     let Date = d.getDate();
     let Month = month[d.getMonth()];
     let Year = d.getFullYear();
-
     return `${Day} ${Date} ${Month} ${Year}`;
   };
 
   return (
-    <div className={datas?(datas.weather[0].main==="Clear")?"clear col-lg-12":"cloud col-lg-12":""} >
+    
+    <div className={datas?(window.innerWidth>450)? ((datas.weather[0].main==="Clear")?"clear col-lg-12":"cloud col-lg-12"): ((datas.weather[0].main==="Clear")?"clears col-lg-12":"clouds col-lg-12") :""} >
       <form className="col-10 col-lg-6 mx-auto pt-3">
         <div className="input-group opacity-50">
           <input
